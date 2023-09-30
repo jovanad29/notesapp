@@ -1,0 +1,9 @@
+.noteContainer {
+	border: 1px solid black;
+	padding: 1rem;
+	width: 600px;
+}
+
+.styleWrapper {
+	margin-bottom: 1rem;
+}

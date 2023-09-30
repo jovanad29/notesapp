@@ -1,0 +1,75 @@
+.formContainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.formContainer form {
+	padding: 2rem;
+	width: 600px;
+	background-color: white;
+	position: relative;
+}
+
+.formGroup {
+	display: flex;
+	justify-content: space-between;
+	margin: 1.2rem 0;
+}
+
+input,
+textarea,
+#categories {
+	width: 450px;
+	border: 1px solid grey;
+	font-family: inherit;
+	padding: 0.5rem;
+}
+
+.formGroup #categories {
+	min-height: 100px;
+	background-color: white;
+}
+
+.formGroupSpecial {
+	margin: 1.2rem 0;
+}
+
+.formGroupSpecial .specialWrapper {
+	display: flex;
+	justify-content: end;
+}
+
+.formGroupSpecial .specialWrapper input {
+	width: calc(450px - 4rem);
+}
+
+.formGroupSpecial .specialWrapper button {
+	margin-left: 1.5rem;
+}
+
+.wrapperButtonsRight {
+	display: flex;
+	flex-direction: row;
+	/* align-items: center; */
+	justify-content: end;
+	height: 2rem;
+}
+
+.wrapperButtonsRight button {
+	margin-left: 1rem;
+}
+
+.topRight {
+	margin: 1rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
