@@ -22,7 +22,8 @@ export default function NoteForm({ onClose }) {
 		if (noteId) {
 			axios
 				.get(
-					"http://localhost:3001/api/notes/" +
+					(import.meta.env.VITE_API_URL + "/notes" ||
+						"http://localhost:3001/api/notes/") +
 						noteId +
 						"?userId=" +
 						userId
@@ -59,8 +60,14 @@ export default function NoteForm({ onClose }) {
 		e.preventDefault();
 		const method = noteId ? "put" : "post";
 		const url = noteId
-			? "http://localhost:3001/api/notes/" + noteId + "?userId=" + userId
-			: "http://localhost:3001/api/notes?userId=" + userId;
+			? (import.meta.env.VITE_API_URL || "http://localhost:3001/api") +
+			  "/notes/" +
+			  noteId +
+			  "?userId=" +
+			  userId
+			: (import.meta.env.VITE_API_URL || "http://localhost:3001/api") +
+			  "/notes" +
+			  userId;
 		axios[method](url, note)
 			.then(({ data }) => {
 				if (method == "post") {

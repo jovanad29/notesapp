@@ -15,7 +15,8 @@ export default function Note({ note, setOpen, open }) {
 	const archiveNote = () => {
 		axios
 			.put(
-				"http://localhost:3001/api/notes/" +
+				(import.meta.env.VITE_API_URL + "/notes" ||
+					"http://localhost:3001/api/notes/") +
 					id +
 					"/archive?userId=" +
 					userId
@@ -30,7 +31,9 @@ export default function Note({ note, setOpen, open }) {
 		if (confirm("Are you sure?")) {
 			axios
 				.delete(
-					"http://localhost:3001/api/notes/" +
+					(import.meta.env.VITE_API_URL ||
+						"http://localhost:3001/api") +
+						"/notes" +
 						id +
 						"?userId=" +
 						userId

@@ -21,7 +21,11 @@ export default function SingIn() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		axios
-			.post("http://localhost:3001/api/users/login", user)
+			.post(
+				(import.meta.env.VITE_API_URL || "http://localhost:3001/api") +
+					"/users/login",
+				user
+			)
 			.then(({ data }) => {
 				if (data.statusCode == 200) {
 					alert("You've logged in!");
